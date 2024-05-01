@@ -12,7 +12,7 @@ class Program
     static void ToExcel()
     {
         // Укажите путь к вашему текстовому файлу с электронными почтами
-        string textFilePath = "/home/kraiben/Code/excel/excel/bin/Debug/net7.0/1.txt";
+        string textFilePath = "/home/kraiben/Code/excel/excel/bin/Debug/net7.0/input.txt";
 
         // Укажите путь для сохранения Excel-файла
         string excelFilePath = "/home/kraiben/Code/excel/excel/bin/Debug/net7.0/input.xlsx";
