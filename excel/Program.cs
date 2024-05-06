@@ -7,7 +7,7 @@ class Program
 {
     static void Main()
     {
-        //Fuck.Main1();
-        From_txt_to_list.ReadEmailsFromTxt("/home/kraiben/Documents/reply.txt");
+        Fuck.Main1();
+        //From_txt_to_list.ReadEmailsFromTxt("/home/kraiben/Documents/reply.txt");
     }
 }

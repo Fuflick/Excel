@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using NPOI.OpenXml4Net.OPC;
 using NPOI.XWPF.UserModel;
@@ -12,7 +8,8 @@ namespace excel
     {
         public static void Main1()
         {
-            string filePath = "/home/kraiben/Downloads/Telegram Desktop/3.docx"; // Путь к вашему файлу
+            //string filePath = "/home/kraiben/Downloads/Telegram Desktop/3.docx"; // Путь к вашему файлу
+            string filePath = "/home/kraiben/Downloads/test.docx"; // Путь к вашему файлу
 
             List<string> messages = ReadWordDocument(filePath);
 
@@ -22,8 +19,8 @@ namespace excel
             // Ключевые слова для типов
             Dictionary<string, List<string>> keywords = new Dictionary<string, List<string>>
             {
-                {"Судовладельцы", new List<string>{"Vessel", "Vessels", "MV", "Fleet", "dwt", "Handy", "Panamax", "Supramax", "Open"}},
-                {"Брокеры", new List<string>{"Urea", "Tn", "Fertilizer", "Fertilizers", "Steel", "Chickpeas", "Wheat", "Coal", "Corn", "Cargo"}}
+                {"Vessel", new List<string>{"vessel", "mv", "fleet", "dwt", "handy", "panamax", "supramax", "open"}},
+                {"Cargo", new List<string>{"urea", "tn", "fertilizer", "fertilizers", "steel", "chickpeas", "wheat", "coal", "corn", "cargo", "1000x1000", "grain"}}
             };
 
             // Инициализируем список для каждого типа
@@ -44,8 +41,8 @@ namespace excel
                 foreach (Match match in matches)
                 {
                     int emailIndex = match.Index;
-                    int startIndex = Math.Max(0, emailIndex - 31);
-                    int endIndex = Math.Min(emailIndex + 31, message.Length - 1);
+                    int startIndex = Math.Max(0, emailIndex - 200);
+                    int endIndex = Math.Min(emailIndex + 200, message.Length - 1);
                     string subString = message.Substring(startIndex, endIndex - startIndex);
                     
                     bool emailAdded = false; // Флаг для отслеживания добавления адреса в категорию
